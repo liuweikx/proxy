@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app id="WebApp_ID_proxy" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<filter>
+		<filter-name>ExtractParamsFilter</filter-name>
+		<filter-class>
+			com.tigerknows.proxy.web.servlet.ExtractParamsFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>ExtractParamsFilter</filter-name>
+		<url-pattern>/local</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>ServiceServlet</servlet-name>
+		<servlet-class>com.tigerknows.proxy.web.servlet.ServiceServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>InitServlet</servlet-name>
+		<servlet-class>com.tigerknows.proxy.web.servlet.InitServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ServiceServlet</servlet-name>
+		<url-pattern>/local</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>InitServlet</servlet-name>
+		<url-pattern>/init</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>

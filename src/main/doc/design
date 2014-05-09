@@ -1,0 +1,12 @@
+IP : 对应数据保存在数据库中
+
+TABLE ： PROXY
+IP PORT TYPE CITY COUNTRY STATE
+
+TYPE可能的值 :   http   scoks
+
+
+配置文件：数据库，并发扫描数，定期扫描时间，结果map中某url过期时间
+
+
+定期从数据库取出IP放到服务中，多线程扫描，同时要处理请求
